@@ -46,11 +46,11 @@ export class HomePage extends BasePage {
     }
 
     getProductTitleElement(resultNumber: number) {
-        return cy.get('div[data-index="' + (resultNumber + 1) + '"] h2 span');
+        return cy.get('div[data-index="' + (resultNumber + 2) + '"] h2 span');
     }
 
     SelectRecordFromTheSearchResult(resultNumber: number) {
-        cy.get('div[data-index="' + (resultNumber + 1) + '"] div[class="puisg-row"] div[class$="puis-list-col-left"] a').click();
+        cy.get('div[data-index="' + (resultNumber + 2) + '"] div[class="puisg-row"] div[class$="puis-list-col-left"] a').click();
     }
 
 }

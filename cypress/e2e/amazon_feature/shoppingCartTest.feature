@@ -11,7 +11,7 @@ Feature: Amazon shopping cart feature
        And I search by entering term of 'Automation'
        And I select Customer Reviews as 4 Stars & Up
        And I select Language as 'English'
-       And I select '1' item from the list
+       And I select '4' item from the list
       Then I verify the project details on product details page
       When I select quantity as '2'
        And I select add to cart

@@ -6,9 +6,9 @@ export class CartPage extends BasePage {
 
     getTotalAmount() { return cy.get('#sc-subtotal-amount-activecart span'); }
 
-    getQtyLabel() { return cy.get('sc-subtotal-label-activecart'); }
+    getQtyLabel() { return cy.get('div[data-name="Subtotals"] span[id="sc-subtotal-label-activecart"]'); }
 
-    getQtyDDL() { return cy.get('a-dropdown-prompt'); }
+    getQtyDDL() { return cy.get('span[class="a-button-inner"] span[class="a-dropdown-prompt"]'); }
 
     getDeleteCartOption() { return cy.get('input[value="Delete"]'); }
 

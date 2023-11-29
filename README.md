@@ -12,7 +12,6 @@ Download according to your OS (Windows, Linux, or IOS).
 Once it's been downloaded, verify that it's been installed successfully by running the following command in a terminal,
 
 #### _node --version_
-
 This will return the version of the NodeJS, which has been installed.
 
 Download and save the project into your machine or clone the project for your preffered folder.

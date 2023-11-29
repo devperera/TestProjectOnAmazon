@@ -17,12 +17,6 @@ export class ProductDetailsPage extends BasePage {
             .should('contain.text', expectedText);
     }
 
-    getUnitPrice() : any {
-        this.getPrice().then(($titleElement) => {
-            return $titleElement.text();//$51.07
-        });
-    }
-
     selectQty(qty: number) {
         this.getQty().click();
         cy.get('#quantity_' + (qty - 1))
