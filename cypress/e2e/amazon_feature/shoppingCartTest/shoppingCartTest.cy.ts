@@ -12,7 +12,6 @@ let qtyAmount: number;
 let unitPrice: number;
 
 When('I select {string} from the catergory list', (menuOption) => {
-    homePage.DismissChangeDiliveryAddressPopUp();
     homePage.SelectFromMenuDropDown(menuOption);
 
 });

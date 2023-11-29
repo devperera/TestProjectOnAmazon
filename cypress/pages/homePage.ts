@@ -2,8 +2,6 @@ import { BasePage } from './basePage';
 
 export class HomePage extends BasePage {
 
-    getPopUps() { return cy.get('.glow-toaster-footer'); }
-
     getSearchTextBox() { return cy.get('#twotabsearchtextbox'); }
 
     getSearchBtn() { return cy.get('#nav-search-submit-button'); }
@@ -13,10 +11,6 @@ export class HomePage extends BasePage {
     getCustomerReviewFourAndUp() { return cy.get('#reviewsRefinements span[data-csa-c-type="element"]:first-child'); }
 
     getLanguageOption() { return cy.get('span[class="a-size-base a-color-base"]'); }
-
-    DismissChangeDiliveryAddressPopUp() {
-        this.getPopUps().click();
-    }
 
     SelectFromMenuDropDown(menuOption: string) {
         this.getSearchTextBox()
