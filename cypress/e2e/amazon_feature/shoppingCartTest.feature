@@ -18,4 +18,4 @@ Feature: Amazon shopping cart feature
        And I click on go to cart 
       Then I verify the cart details
       When I clear the cart 
-      Then I verify the clear cart details 
+      Then I verify the clear cart contain '$0.00' as amount

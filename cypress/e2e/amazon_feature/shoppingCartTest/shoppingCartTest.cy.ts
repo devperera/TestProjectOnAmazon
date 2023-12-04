@@ -43,8 +43,10 @@ Then('I verify the project details on product details page', () => {
     productDetailsPage.verifyProductTitle(productTitleFromSearchResult);
 
     productDetailsPage.getPrice().then(($unitPriceElement) => {
-        unitPrice = parseFloat($unitPriceElement.text().replace('$','')).toFixed(2);//51.07 
-        unitPrice = (unitPrice * 2).toFixed(2);//unit price mulipal by two 102.14
+        //unitPrice = parseFloat($unitPriceElement.text().replace('$','')).toFixed(2);//51.07 
+        //unitPrice = (unitPrice * 2).toFixed(2);//unit price mulipal by two 102.14
+        unitPrice = productDetailsPage.getNumberWithDecible($unitPriceElement, 2);
+        unitPrice = productDetailsPage.multiplyDecibleNumber(unitPrice, 2, 2);
     });
 
 });
@@ -71,7 +73,8 @@ Then('I verify the cart details', () => {
     cartPage.verifyQtyFormLabel(qtyAmount);
 
     cartPage.getTotalAmount().then(($totalPriceElement) => {
-        let totalPrice: number = parseFloat($totalPriceElement.text().replace('$','')).toFixed(2);
+        //let totalPrice: number = parseFloat($totalPriceElement.text().replace('$','')).toFixed(2);
+        let totalPrice: number = cartPage.getNumberWithDecible($totalPriceElement, 2);
         expect(totalPrice).to.eq(unitPrice);
     });
 
@@ -82,7 +85,7 @@ When('I clear the cart', () => {
 
 });
 
-Then('I verify the clear cart details', () => {
-    cartPage.verifyTotalAmount('$0.00');
+Then('I verify the clear cart contain {string} as amount', (amountValue) => {
+    cartPage.verifyTotalAmount(amountValue);
 
 });
